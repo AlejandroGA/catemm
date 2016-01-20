@@ -29,6 +29,17 @@ class SegundoRegistroForm(ModelForm):
         model = SegundoRegistro
         fields = ('cliente', 'caratula', 'tarjeta_de_mejoravit', 'numero_tarjeta', 'tarjeta_entregada', 'tarjeta_activa', 'tarjeta_con_fondos', 'credito',)
 
+#        widgets={
+#           'cliente': forms.TextInput(attrs={'type':'text','required':'true','class':'form-control form-control-sm  col-md-2'}),
+#            'caratula': forms.TextInput(attrs={'type':'number','required':'true','class':'form-control form-control-sm  col-md-2'}),
+#            'tarjeta_de_mejoravit': forms.TextInput(attrs={'type':'file','required':'true','class':'form-control form-control-sm  col-md-2'}),
+#            'numero_tarjeta': forms.TextInput(attrs={'type':'select','required':'true','class':'form-control form-control-sm  col-md-2'}),
+#            'tarjeta_entregada': forms.CheckboxInput(attrs={'type':'checkbox','required':'true','class':'form-control form-control-sm  col-md-2 checkbox'}),
+#            'tarjeta_activa': forms.TextInput(attrs={'type':'select','required':'true','class':'form-control form-control-sm  col-md-2'}),
+#            'tarjeta_con_fondos': forms.TextInput(attrs={'type':'select','required':'true','class':'form-control form-control-sm  col-md-2 checkbox'}),
+#            'credito': forms.TextInput(attrs={'type':'number','required':'true','class':'form-control form-control-sm  col-md-2'}),
+#            'operador': forms.TextInput(attrs={'type':'text','required':'true','class':'form-control form-control-sm  col-md-2'}),
+#        }
 
 
 

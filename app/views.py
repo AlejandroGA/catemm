@@ -69,6 +69,24 @@ def PrimerRegistroDelete(request, pk, template_name='delete/confirmacion.html'):
     return render(request, template_name, {'object':clientes})
 
 
+def SegundoRegistroEdit(request, pk, template_name='editar/segundo_registro.html'):
+    clientes = get_object_or_404(SegundoRegistro, pk=pk)
+    form  = SegundoRegistroForm(request.POST or None,  instance=clientes)
+    if form.is_valid():
+        form.save()
+        return redirect('segundo_registro')
+    return render(request, template_name, {'form':form})
+
+def SegundoRegistroDelete(request, pk, template_name='delete/confirmacion2.html'):
+    clientes = get_object_or_404(SegundoRegistro, pk=pk)
+    if request.method=='POST':
+        clientes.delete()
+        return redirect('segundo_registro')
+    return render(request, template_name, {'object':clientes})
+
+
+
+
 def segundoRegistro(request):
     usuario = request.user
     if request.method == 'POST':
@@ -77,7 +95,7 @@ def segundoRegistro(request):
             posta = form.save(commit=False)
             posta.operador = request.user
             posta.save()
-            return HttpResponseRedirect('/desempeno/')
+            return HttpResponseRedirect('/segundo_registro/')
     else:
         form = SegundoRegistroForm()
     mis_clientes = SegundoRegistro.objects.filter(operador__username__contains=usuario)
